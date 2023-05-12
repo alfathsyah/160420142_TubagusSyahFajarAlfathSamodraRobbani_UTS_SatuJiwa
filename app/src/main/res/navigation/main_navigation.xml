@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/donasiListFragment"
+        android:name="com.example.a160420142_tubagussyahfajaralfathsamodrarobbani_uts_satujiwa.view.DonasiListFragment"
+        android:label="fragment_donasi_list"
+        tools:layout="@layout/fragment_donasi_list" >
+        <action
+            android:id="@+id/actionDonasiDetail"
+            app:destination="@id/donasiDetailListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/donasiDetailListFragment"
+        android:name="com.example.a160420142_tubagussyahfajaralfathsamodrarobbani_uts_satujiwa.view.DonasiDetailListFragment"
+        android:label="fragment_donasi_detail_list"
+        tools:layout="@layout/fragment_donasi_detail_list" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <action
+            android:id="@+id/actionDetailDonatur"
+            app:destination="@id/donaturFragment" />
+        <action
+            android:id="@+id/action_donasiDetailListFragment_to_commentFragment"
+            app:destination="@id/commentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/donaturFragment"
+        android:name="com.example.a160420142_tubagussyahfajaralfathsamodrarobbani_uts_satujiwa.view.DonaturFragment"
+        android:label="fragment_donatur"
+        tools:layout="@layout/fragment_donatur" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/zakatListFragment"
+        android:name="com.example.a160420142_tubagussyahfajaralfathsamodrarobbani_uts_satujiwa.view.ZakatListFragment"
+        android:label="fragment_zakat_list"
+        tools:layout="@layout/fragment_zakat_list" >
+        <action
+            android:id="@+id/actionZakatDetail"
+            app:destination="@id/zakatDetailListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/zakatDetailListFragment"
+        android:name="com.example.a160420142_tubagussyahfajaralfathsamodrarobbani_uts_satujiwa.view.ZakatDetailListFragment"
+        android:label="fragment_zakat_detail_list"
+        tools:layout="@layout/fragment_zakat_detail_list" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.a160420142_tubagussyahfajaralfathsamodrarobbani_uts_satujiwa.view.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/actionLogin"
+            app:destination="@id/donasiListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.a160420142_tubagussyahfajaralfathsamodrarobbani_uts_satujiwa.view.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/commentFragment"
+        android:name="com.example.a160420142_tubagussyahfajaralfathsamodrarobbani_uts_satujiwa.view.CommentFragment"
+        android:label="fragment_comment"
+        tools:layout="@layout/fragment_comment" />
+</navigation>
