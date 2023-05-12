@@ -26,7 +26,7 @@
             android:id="@+id/actionDetailDonatur"
             app:destination="@id/donaturFragment" />
         <action
-            android:id="@+id/action_donasiDetailListFragment_to_commentFragment"
+            android:id="@+id/actionDetailComment"
             app:destination="@id/commentFragment" />
     </fragment>
     <fragment
@@ -74,5 +74,9 @@
         android:id="@+id/commentFragment"
         android:name="com.example.a160420142_tubagussyahfajaralfathsamodrarobbani_uts_satujiwa.view.CommentFragment"
         android:label="fragment_comment"
-        tools:layout="@layout/fragment_comment" />
+        tools:layout="@layout/fragment_comment" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
 </navigation>

@@ -33,7 +33,7 @@ class ZakatDetailListFragment : Fragment() {
         val zakatID = ZakatDetailListFragmentArgs.fromBundle(requireArguments()).id
         detailViewModel.refresh(zakatID)
         val txtJudul = view.findViewById<TextView>(R.id.txtNamaDonatur)
-        val txtTotal = view.findViewById<TextView>(R.id.txtJumlahDonasi)
+        val txtTotal = view.findViewById<TextView>(R.id.txtKomen)
         val txtDeskripsi = view.findViewById<TextView>(R.id.txtDeskripsi)
         val imgView = view.findViewById<ImageView>(R.id.imageViewDetail2)
         detailViewModel.zakatLD.observe(viewLifecycleOwner)

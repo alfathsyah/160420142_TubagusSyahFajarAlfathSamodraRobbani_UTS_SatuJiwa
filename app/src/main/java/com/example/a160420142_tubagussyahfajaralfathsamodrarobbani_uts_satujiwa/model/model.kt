@@ -47,3 +47,13 @@ data class Profile(
     @SerializedName("name")
     val name:String?
 )
+
+data class Comment(
+    val id:String?,
+    @SerializedName("nama")
+    val name:String?,
+    @SerializedName("komen")
+    val komen:String?,
+    @SerializedName("donasi_id")
+    val donasi_id:String?
+)

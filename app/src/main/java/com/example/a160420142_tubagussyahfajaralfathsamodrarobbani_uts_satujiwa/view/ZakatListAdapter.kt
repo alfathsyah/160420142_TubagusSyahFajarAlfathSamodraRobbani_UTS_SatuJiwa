@@ -32,7 +32,7 @@ class ZakatListAdapter (val zakatList:ArrayList<Zakat>) : RecyclerView.Adapter<Z
     override fun onBindViewHolder(holder: ZakatViewHolder, position: Int) {
         val txtID = zakatList[position].id
         val txtJudul = holder.view.findViewById<TextView>(R.id.txtNamaDonatur)
-        val txtTotal = holder.view.findViewById<TextView>(R.id.txtJumlahDonasi)
+        val txtTotal = holder.view.findViewById<TextView>(R.id.txtKomen)
         val txtJenis = holder.view.findViewById<TextView>(R.id.txtJenis)
         txtJudul.text = zakatList[position].name
         txtTotal.text = "Rp. " + zakatList[position].total

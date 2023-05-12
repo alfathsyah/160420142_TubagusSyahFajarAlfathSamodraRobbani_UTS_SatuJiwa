@@ -1,6 +1,7 @@
 package com.example.a160420142_tubagussyahfajaralfathsamodrarobbani_uts_satujiwa.viewmodel
 
 import android.app.Application
+import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
@@ -16,6 +17,7 @@ class ProfileViewModel (application: Application):
     AndroidViewModel(application){
     val profileLD = MutableLiveData<Profile>()
     private var queue: RequestQueue? = null
+    val TAG = "volleyTag"
 
 //    fun refresh(profileId: String) {
 //
@@ -64,6 +66,7 @@ class ProfileViewModel (application: Application):
 
     override fun onCleared() {
         super.onCleared()
+        queue?.cancelAll(TAG)
     }
 
 

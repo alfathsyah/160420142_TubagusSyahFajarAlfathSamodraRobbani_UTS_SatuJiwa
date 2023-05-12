@@ -1,6 +1,7 @@
 package com.example.a160420142_tubagussyahfajaralfathsamodrarobbani_uts_satujiwa.viewmodel
 
 import android.app.Application
+import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
@@ -16,6 +17,7 @@ class ZakatDetailViewModel(application: Application):
     AndroidViewModel(application){
     val zakatLD = MutableLiveData<Zakat>()
     private var queue: RequestQueue? = null
+    val TAG = "volleyTag"
 
     fun refresh(zakatId: String) {
 
@@ -40,5 +42,6 @@ class ZakatDetailViewModel(application: Application):
 
     override fun onCleared() {
         super.onCleared()
+        queue?.cancelAll(TAG)
     }
 }

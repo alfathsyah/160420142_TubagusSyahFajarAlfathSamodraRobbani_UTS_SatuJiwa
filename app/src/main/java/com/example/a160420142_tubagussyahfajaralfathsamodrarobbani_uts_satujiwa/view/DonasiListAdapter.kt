@@ -34,7 +34,7 @@ class DonasiListAdapter(val donasiList:ArrayList<Donasi>) :RecyclerView.Adapter<
         val txtID = donasiList[position].id
         Global.id = txtID.toString()
         val txtJudul = holder.view.findViewById<TextView>(R.id.txtNamaDonatur)
-        val txtTotal = holder.view.findViewById<TextView>(R.id.txtJumlahDonasi)
+        val txtTotal = holder.view.findViewById<TextView>(R.id.txtKomen)
         val txtSisaHari = holder.view.findViewById<TextView>(R.id.txtJenis)
         txtJudul.text = donasiList[position].name
         txtTotal.text = "Rp. " + donasiList[position].total_donasi

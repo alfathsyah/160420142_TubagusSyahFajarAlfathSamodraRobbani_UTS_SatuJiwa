@@ -15,7 +15,7 @@ class DonaturAdapter(val donaturList:ArrayList<Donatur>) :RecyclerView.Adapter<D
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DonaturViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.donasi_list_item, parent, false)
+        val view = inflater.inflate(R.layout.donatur_list_item, parent, false)
         return DonaturViewHolder(view)
     }
 
@@ -26,15 +26,15 @@ class DonaturAdapter(val donaturList:ArrayList<Donatur>) :RecyclerView.Adapter<D
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: DonaturViewHolder, position: Int) {
         val txtNama = holder.view.findViewById<TextView>(R.id.txtNamaDonatur)
-        val txtJumlah = holder.view.findViewById<TextView>(R.id.txtJumlahDonasi)
+        val txtJumlah = holder.view.findViewById<TextView>(R.id.txtKomen)
         txtNama.text = donaturList[position].name
         txtJumlah.text = "Rp. " + donaturList[position].jumlah_donasi
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateStudentList(newDonaturList: ArrayList<Donatur>) {
+    fun updateDonaturList(newDonaturList: Donatur) {
         donaturList.clear()
-        donaturList.addAll(newDonaturList)
+        donaturList.addAll(listOf(newDonaturList))
         notifyDataSetChanged()
     }
 }

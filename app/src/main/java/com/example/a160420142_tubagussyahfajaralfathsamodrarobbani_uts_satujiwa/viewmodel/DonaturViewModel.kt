@@ -8,7 +8,6 @@ import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.a160420142_tubagussyahfajaralfathsamodrarobbani_uts_satujiwa.model.Donasi
 import com.example.a160420142_tubagussyahfajaralfathsamodrarobbani_uts_satujiwa.model.Donatur
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -16,6 +15,9 @@ import com.google.gson.reflect.TypeToken
 class DonaturViewModel(application: Application):
     AndroidViewModel(application){
     val donaturLD = MutableLiveData<Donatur>()
+    val donaturLoadErrorLD = MutableLiveData<Boolean>()
+    val loadingLD = MutableLiveData<Boolean>()
+    val TAG = "volleyTag"
     private var queue: RequestQueue? = null
 
     fun refresh(donasiId: String) {
@@ -29,10 +31,13 @@ class DonaturViewModel(application: Application):
                 val sType = object : TypeToken<Donatur>() { }.type
                 val result = Gson().fromJson<Donatur>(it, sType)
                 donaturLD.value = result
+                loadingLD.value = false
                 Log.d("showvoley", result.toString())
             },
             {
                 Log.d("showvoley", it.toString())
+                donaturLoadErrorLD.value = false
+                loadingLD.value = false
             }
         )
 
@@ -41,5 +46,6 @@ class DonaturViewModel(application: Application):
 
     override fun onCleared() {
         super.onCleared()
+        queue?.cancelAll(TAG)
     }
 }
